@@ -3,7 +3,7 @@ import HeaderLinks from "../components/header"
 const Header = () => {
     const links = [{name: 'Rockets',path: '/'},{name: 'Missions',path: 'mission'},{name: 'Profile',path: 'profile'},]
   return (
-    <div>
+    <div className="header">
         <HeaderLinks links={links}/>
         <Outlet />
     </div>
