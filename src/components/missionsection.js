@@ -2,12 +2,10 @@ import { getMissions } from '../redux/missions/missionSlice'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { useState } from 'react'
 import { changestate } from '../redux/missions/missionSlice'
 
 const Missionsection = () => {
   const dispatch = useDispatch()
-  const [buttonstate,changebuttonstate] = useState('Join mission')
  
   useEffect(() => {
     dispatch(getMissions())

@@ -1,12 +1,16 @@
 import { useEffect } from "react";
 import { getRockets } from "../redux/Rockets/rocketSlice";
 import { useDispatch, useSelector } from "react-redux";
+import {changestate} from '../redux/Rockets/rocketSlice'
 import '../styles/rocket.css'
 const RocketSection = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRockets());
   }, []);
+  const handleChange = (id)=> {
+    dispatch(changestate(id))
+      }
   const store = useSelector((store) => store.rocketReducer);
   const { rockets, loading } = store;
   if (loading) {
@@ -20,8 +24,8 @@ const RocketSection = () => {
         <img src={rocket.flickr_images} alt={rocket.name} className="rocketimage" />
         <div className="rocketdata">
         <h2 className="rockettitle">{rocket.name}</h2>
-        <p>{rocket.description}</p>
-        <button type="butto,"> Reserve Rocket</button></div>
+        <p>{rocket.reserved ? 'Reserved': ''} {rocket.description}</p>
+        <button type="button" onClick={()=> handleChange(rocket.id)}>{rocket.reserved?'Cancel Reservation':'Reserve a rocket'}</button></div>
       </li>
     );
   });
