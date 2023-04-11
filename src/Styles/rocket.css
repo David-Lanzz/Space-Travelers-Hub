@@ -1,0 +1,35 @@
+.rocketcontainer {
+display: flex;
+flex-direction: column;
+gap: 30px;
+align-items: start;
+padding-top: 5%;
+padding-inline-start: 7%;
+padding-bottom: 2%;
+}
+
+ul {
+    list-style: none;
+}
+
+.rocketgrid {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: start;
+}
+.rocketdata {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.rocketdata p {
+    word-wrap: break-word;
+    width: 80%;
+    text-align: left;
+}
+.rocketimage {
+    width: 25%;
+}
+

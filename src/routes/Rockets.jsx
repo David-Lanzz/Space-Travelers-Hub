@@ -1,6 +1,10 @@
+import RocketItems from "../components/Rockets"
+
 const Rockets = () => {
   return (
-    <div>Rockets</div>
+    <div>
+      <RocketItems />
+    </div>
   )
 }
 

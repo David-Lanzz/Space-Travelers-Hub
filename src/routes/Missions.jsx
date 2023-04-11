@@ -7,4 +7,4 @@ const Missions = () => {
   )
 }
 
-export default MissionsComponent
+export default Missions
