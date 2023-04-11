@@ -30,6 +30,7 @@ const missionSlice = createSlice({
         .addCase(getMissions.fulfilled,(state,action)=> {
 const gottenmissions = action.payload
 gottenmissions.map((mission,index) => {
+    gottenmissions.completed = false
     if(index % 2 === 0){
         mission.background = '#eeeeee'
     }
@@ -37,6 +38,8 @@ gottenmissions.map((mission,index) => {
         mission.background = '#fff'
     }
 })
+gottenmissions.member = false
+console.log(gottenmissions)
 return {...state,loading: false,missions: action.payload}
         })
         .addCase(getMissions.rejected,(state)=> {

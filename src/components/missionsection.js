@@ -2,9 +2,12 @@ import { getMissions } from '../redux/missions/missionSlice'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
+import { useState } from 'react'
 
 const Missionsection = () => {
   const dispatch = useDispatch()
+  const [missionstate,changemissionstate] = useState('Not a member')
+  const [buttonstate,changebuttonstate] = useState('Join mission')
   useEffect(() => {
     dispatch(getMissions())
   }, [])
@@ -18,8 +21,8 @@ const Missionsection = () => {
       return (
         <li className='grid tablerow' style={{background: mission.background}} key={mission.mission_id}><h3 className='rightborder'>{mission.mission_name}</h3>
           <p className='rightborder'>{mission.description}</p>
-          <span className='rightborder center'><button type='button'>Not a member</button></span>
-          <span className='rightborder center'><button type='button'>Join mission</button></span></li>
+          <span className='rightborder center'><button type='button'>{missionstate}</button></span>
+          <span className='rightborder center'><button type='button'>{buttonstate}</button></span></li>
       )
     })
   )
