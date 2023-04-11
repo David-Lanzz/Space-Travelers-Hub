@@ -13,7 +13,7 @@ nav {
     gap: 30px;
 }
 
-ul {
+.navlink {
     display: flex;
     gap: 15px;  
     justify-content: space-around;

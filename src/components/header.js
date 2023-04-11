@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import image from "../images/planet.png";
-import "../Styles/header.css";
+import "../styles/header.css";
 
 const HeaderLinks = ({ links }) => {
   return (
@@ -11,7 +11,7 @@ const HeaderLinks = ({ links }) => {
           <h1>Space Travelers' Hub</h1>
         </div>
 
-        <ul>
+        <ul className="navlink">
           {links.map((link) => {
             return (
               <li key={link.path}>
