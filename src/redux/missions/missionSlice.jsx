@@ -20,7 +20,14 @@ const missionSlice = createSlice({
     name: 'missions',
     initialState,
     reducers: {
-        
+        changestate: (state,{payload})=> {
+const newstate = [...state.missions]
+newstate.map(mission => {
+    if(mission.mission_id === payload){
+        mission.member = !mission.member
+    }
+})
+        }
     },
     extraReducers(builder) {
         builder
@@ -30,7 +37,7 @@ const missionSlice = createSlice({
         .addCase(getMissions.fulfilled,(state,action)=> {
 const gottenmissions = action.payload
 gottenmissions.map((mission,index) => {
-    gottenmissions.completed = false
+   mission.member = false
     if(index % 2 === 0){
         mission.background = '#eeeeee'
     }
@@ -38,8 +45,6 @@ gottenmissions.map((mission,index) => {
         mission.background = '#fff'
     }
 })
-gottenmissions.member = false
-console.log(gottenmissions)
 return {...state,loading: false,missions: action.payload}
         })
         .addCase(getMissions.rejected,(state)=> {
@@ -47,4 +52,5 @@ return {...state,loading: false,missions: action.payload}
         })
     }
 })
+export const {changestate} = missionSlice.actions
 export default missionSlice.reducer
