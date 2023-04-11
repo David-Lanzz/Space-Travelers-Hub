@@ -1,16 +1,28 @@
-import { NavLink } from "react-router-dom"
-const HeaderLinks = ({links}) => {
+import { NavLink } from "react-router-dom";
+import image from "../images/planet.png";
+import "../styles/header.css";
+
+const HeaderLinks = ({ links }) => {
   return (
     <header>
-        <ul>
-            {links.map(link => {
-                return (
-                    <li key={link.path}><NavLink to={link.path}>{link.name}</NavLink></li>
-                )
-            })}
-        </ul>
-    </header>
-  )
-}
+      <nav>
+        <div className="logo">
+          <img src={image} alt="logo"></img>
+          <h1>Space Travelers' Hub</h1>
+        </div>
 
-export default HeaderLinks
+        <ul className="navlink">
+          {links.map((link) => {
+            return (
+              <li key={link.path}>
+                <NavLink to={link.path}>{link.name}</NavLink>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+export default HeaderLinks;
