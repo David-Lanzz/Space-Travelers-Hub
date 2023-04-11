@@ -1,7 +1,6 @@
 import {createSlice,createAsyncThunk} from '@reduxjs/toolkit'
 import axios from 'axios'
 
-
 const url = 'https://api.spacexdata.com/v3/missions'
 export const getMissions = createAsyncThunk('missions/getMissions',async()=> {
     const missionsdata = await axios.get(url)
@@ -27,6 +26,10 @@ newstate.map(mission => {
         mission.member = !mission.member
     }
 })
+        },
+        populateprofile: (state)=> {
+            const newstate = [...state.filter((mission)=> mission.member)]
+            return {...state,missions: newstate}
         }
     },
     extraReducers(builder) {
@@ -45,12 +48,12 @@ gottenmissions.map((mission,index) => {
         mission.background = '#fff'
     }
 })
-return {...state,loading: false,missions: action.payload}
+return {...state,loading: false,missions: gottenmissions}
         })
         .addCase(getMissions.rejected,(state)=> {
             return {...state, error: true,loading:false}
         })
     }
 })
-export const {changestate} = missionSlice.actions
+export const {changestate,populateprofile} = missionSlice.actions
 export default missionSlice.reducer

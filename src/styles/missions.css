@@ -3,7 +3,6 @@
     grid-template-columns: 2fr 16fr 2fr 3fr;
 }
 .missionsTable {
-    width: 100%;
     text-align: left;
 }
 .tablerow {
