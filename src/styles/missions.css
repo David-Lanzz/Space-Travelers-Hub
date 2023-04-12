@@ -5,6 +5,7 @@
 
 .missionsTable {
   text-align: left;
+  padding-top: 30px;
 }
 
 .tablerow {
@@ -34,4 +35,34 @@
 
 .align {
   align-items: center;
+}
+
+#activemember {
+  background-color: gray;
+  color: white;
+  padding: 2px;
+  font-size: 10px;
+}
+
+#activemember.active {
+  background-color: rgb(0, 106, 255);
+  color: white;
+  padding: 1px;
+  font-size: 10px;
+}
+
+#joinmission {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
+  padding: 6px;
+  font-size: 12px;
+  color: rgb(179, 171, 171);
+  border-radius: 5px;
+}
+
+#joinmission.active {
+  border: 2px solid rgb(218, 0, 0);
+  color: red;
+  padding: 6px;
+  font-size: 12px;
 }
