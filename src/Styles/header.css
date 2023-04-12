@@ -10,6 +10,7 @@ nav {
 .logo {
   display: flex;
   gap: 30px;
+  font-family: 'kanit', sans-serif;
 }
 
 .navlink {
@@ -23,6 +24,8 @@ nav {
 
 a {
   text-decoration: none;
+  font-family: 'kanit', sans-serif;
+  font-size: 18px;
 }
 
 img {
@@ -36,5 +39,7 @@ h1 {
 }
 
 header nav a.active {
-  background: #c5b4b4;
+  background: rgb(0, 106, 255);
+  color: white;
+  padding: 3px;
 }

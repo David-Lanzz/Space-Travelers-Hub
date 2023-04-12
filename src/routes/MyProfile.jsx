@@ -10,7 +10,7 @@ const MyProfile = () => (
       </ul>
     </section>
     <section>
-      <li><h2>My Missions</h2></li>
+      <li><h2>My Rockets</h2></li>
       <ul className="profileparent">
         <Rocketprofile />
       </ul>
