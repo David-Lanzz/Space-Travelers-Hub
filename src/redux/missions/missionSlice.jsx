@@ -29,10 +29,6 @@ const missionSlice = createSlice({
       });
       return { ...state, missions: newstate };
     },
-    populateprofile: (state) => {
-      const newstate = [...state.filter((mission) => mission.member)];
-      return { ...state, missions: newstate };
-    },
   },
   extraReducers(builder) {
     builder
@@ -43,8 +39,9 @@ const missionSlice = createSlice({
           gottenmissions[index].member = false;
           if (index % 2 === 0) {
             gottenmissions[index].background = '#eeeeee';
+          } else {
+            gottenmissions[index].background = '#fff';
           }
-          gottenmissions[index].background = '#fff';
         }
         return { ...state, loading: false, missions: gottenmissions };
       })
