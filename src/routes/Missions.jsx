@@ -1,10 +1,9 @@
-import MissionsComponent from "../components/missions"
-const Missions = () => {
-  return (
-    <div>
-        <MissionsComponent />
-    </div>
-  )
-}
+import MissionsComponent from '../components/missions';
 
-export default Missions
+const Missions = () => (
+  <div>
+    <MissionsComponent />
+  </div>
+);
+
+export default Missions;

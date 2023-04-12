@@ -1,29 +1,37 @@
 .grid {
-    display: grid;
-    grid-template-columns: 2fr 16fr 2fr 3fr;
+  display: grid;
+  grid-template-columns: 2fr 16fr 2fr 3fr;
 }
+
 .missionsTable {
-    text-align: left;
+  text-align: left;
 }
+
 .tablerow {
-   border-bottom: solid 1px #9c9c9c;
+  border-bottom: solid 1px #9c9c9c;
 }
+
 .tabletop {
-    border-top: solid 1px #9c9c9c;
-    height: 3rem;
+  border-top: solid 1px #9c9c9c;
+  height: 3rem;
 }
-.rightborder,.tabletop h3 {
-    border-right: solid 1px #9c9c9c;
-    padding-left: 0.5rem;
+
+.rightborder,
+.tabletop h3 {
+  border-right: solid 1px #9c9c9c;
+  padding-left: 0.5rem;
 }
+
 .tablerow h3 {
-    border-left: solid 1px #9c9c9c;
+  border-left: solid 1px #9c9c9c;
 }
+
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .align {
-    align-items: center;
+  align-items: center;
 }

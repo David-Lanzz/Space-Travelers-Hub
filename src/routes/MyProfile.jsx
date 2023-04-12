@@ -1,20 +1,18 @@
-import Profile from "../components/profile"
-import '../styles/profile.css'
+import Profile from '../components/profile';
+import '../styles/profile.css';
 
-const MyProfile = () => {
-  return (
-    <div className="profile">
-      <section>
+const MyProfile = () => (
+  <div className="profile">
+    <section>
       <li><h2>My Missions</h2></li>
       <ul className="profileparent">
-      <Profile />
+        <Profile />
       </ul>
-      </section>
-      <ul>
-        <li>Rockets</li>
-      </ul>
-    </div>
-  )
-}
+    </section>
+    <ul>
+      <li>Rockets</li>
+    </ul>
+  </div>
+);
 
-export default MyProfile
+export default MyProfile;
