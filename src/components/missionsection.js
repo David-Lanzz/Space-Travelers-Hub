@@ -1,14 +1,9 @@
-import { getMissions } from '../redux/missions/missionSlice'
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { changestate } from '../redux/missions/missionSlice'
+import { useDispatch } from 'react-redux'
 
 const Missionsection = () => {
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(getMissions())
-  }, [])
   const handleChange = (id)=> {
 dispatch(changestate(id))
   }

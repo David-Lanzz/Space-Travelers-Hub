@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #333;
+    font-family: 'Poppins',sans-serif;
+    font-size: 0.9rem;
 }
 body {
-    padding: 0.5rem;
+    padding: 1rem;
+}
+li {
+    list-style: none;
 }
