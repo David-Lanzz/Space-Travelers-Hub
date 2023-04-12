@@ -1,4 +1,4 @@
-/*eslint-disable array-callback-return */
+/* eslint-disable array-callback-return */
 
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
