@@ -41,9 +41,4 @@ const rocketSlice = createSlice({
   },
 });
 
-<<<<<<< HEAD
 export default rocketSlice.reducer;
-=======
-export const {changestate} = rocketSlice.actions
-export default rocketSlice.reducer
->>>>>>> 1dfc31ccbd0ab76b532184f6fae3130c22be8def
