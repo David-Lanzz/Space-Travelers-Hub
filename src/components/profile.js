@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-const Profile = () => {
+export const Profile = () => {
   const store = useSelector((store) => store.missionReducer);
   const { missions } = store;
   const filteredmissions = missions.filter((mission) => mission.member);
@@ -16,4 +16,18 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export const Rocketprofile = () => {
+  const store = useSelector((store) => store.rocketReducer);
+  const { rockets } = store;
+  const reservedRockets = rockets.filter((rocket) => rocket.reserved);
+  if (!reservedRockets.length) {
+    return (
+      <li>Reserve a Rocket</li>
+    );
+  }
+  return (
+    reservedRockets.map((rocket) => (
+      <li className="profilechildren" key={rocket.id}><h4>{rocket.name}</h4></li>
+    ))
+  );
+};

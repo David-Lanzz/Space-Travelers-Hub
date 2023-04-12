@@ -1,5 +1,3 @@
-/* eslint-disable array-callback-return */
-
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -28,7 +26,12 @@ const rocketSlice = createSlice({
         if (rocket.id === payload) {
           rocket.reserved = !rocket.reserved;
         }
+        return rocket;
       });
+    },
+    populateprofile: (state) => {
+      const newstate = [...state.filter((rocket) => rocket.reserved)];
+      return { ...state, rockets: newstate };
     },
   },
   extraReducers(builder) {
@@ -40,7 +43,6 @@ const rocketSlice = createSlice({
       ...state,
       loading: false,
       rockets: action.payload,
-
     }));
     builder.addCase(getRockets.rejected, (state) => ({
       ...state,
