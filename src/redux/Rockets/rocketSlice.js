@@ -1,53 +1,54 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+/* eslint-disable array-callback-return */
 
-const URL = 'https://api.spacexdata.com/v4/rockets'
-export const getRockets = createAsyncThunk ('rockets/getRockets', async()=>{
-    const rocketData = await axios.get(URL)
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-    const {data} = rocketData
-    return data
-    
-})
+const URL = 'https://api.spacexdata.com/v4/rockets';
+export const getRockets = createAsyncThunk('rockets/getRockets', async () => {
+  const rocketData = await axios.get(URL);
+
+  const { data } = rocketData;
+  return data;
+});
 
 const initialState = {
-    rockets: [],
-    loading: false,
-    error: false,
-    fulfilled: false
-}
+  rockets: [],
+  loading: false,
+  error: false,
+  fulfilled: false,
+};
 
 const rocketSlice = createSlice({
-    name: 'rockets',
-    initialState,
-    reducers: {
-      changestate: (state,{payload})=> {
-        const newstate = [...state.rockets]
-        newstate.map(rocket => {
-            if(rocket.id === payload){
-                rocket.reserved = !rocket.reserved
-            }
-        })
-                }
+  name: 'rockets',
+  initialState,
+  reducers: {
+    changestate: (state, { payload }) => {
+      const newstate = [...state.rockets];
+      newstate.map((rocket) => {
+        if (rocket.id === payload) {
+          rocket.reserved = !rocket.reserved;
+        }
+      });
     },
-    extraReducers(builder) {
-        builder.addCase(getRockets.pending, (state) => ({
-            ...state,
-            loading: true,
-          }));
-          builder.addCase(getRockets.fulfilled,(state,action)=> ({
-            ...state,
-            loading: false,
-            rockets: action.payload
+  },
+  extraReducers(builder) {
+    builder.addCase(getRockets.pending, (state) => ({
+      ...state,
+      loading: true,
+    }));
+    builder.addCase(getRockets.fulfilled, (state, action) => ({
+      ...state,
+      loading: false,
+      rockets: action.payload,
 
-          }))
-          builder.addCase(getRockets.rejected,(state) =>({
-            ...state,
-            loading: false,
-            error: true,
-          }))
-    }
-})
+    }));
+    builder.addCase(getRockets.rejected, (state) => ({
+      ...state,
+      loading: false,
+      error: true,
+    }));
+  },
+});
 
-export const {changestate} = rocketSlice.actions
-export default rocketSlice.reducer
+export const { changestate } = rocketSlice.actions;
+export default rocketSlice.reducer;

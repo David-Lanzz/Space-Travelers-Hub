@@ -1,11 +1,9 @@
-import RocketItems from "../components/Rockets"
+import RocketItems from '../components/Rockets';
 
-const Rockets = () => {
-  return (
-    <div>
-      <RocketItems />
-    </div>
-  )
-}
+const Rockets = () => (
+  <div>
+    <RocketItems />
+  </div>
+);
 
-export default Rockets
+export default Rockets;

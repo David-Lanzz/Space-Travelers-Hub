@@ -1,0 +1,20 @@
+.profilechildren {
+  border-bottom: solid #9c9c9c 1px;
+  padding-left: 1rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  border-top: solid #9c9c9c 1px;
+  padding: 2rem;
+}
+
+.profileparent {
+  border: solid #9c9c9c 1px;
+  border-radius: 8px;
+}
