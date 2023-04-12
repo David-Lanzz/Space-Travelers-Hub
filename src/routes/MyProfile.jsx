@@ -1,4 +1,4 @@
-import Profile from '../components/profile';
+import { Profile, Rocketprofile } from '../components/profile';
 import '../styles/profile.css';
 
 const MyProfile = () => (
@@ -9,9 +9,12 @@ const MyProfile = () => (
         <Profile />
       </ul>
     </section>
-    <ul>
-      <li>Rockets</li>
-    </ul>
+    <section>
+      <li><h2>My Missions</h2></li>
+      <ul className="profileparent">
+        <Rocketprofile />
+      </ul>
+    </section>
   </div>
 );
 
