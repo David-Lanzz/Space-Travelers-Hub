@@ -1,4 +1,4 @@
-import '../Styles/missions.css';
+import '../styles/missions.css';
 import Missionsection from './missionsection';
 
 const MissionsComponent = () => (
