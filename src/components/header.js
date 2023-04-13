@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import image from '../images/planet.png';
-import '../styles/header.css';
+import '../Styles/header.css';
 
 const HeaderLinks = ({ links }) => (
   <header>

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { changestate } from '../redux/Rockets/rocketSlice';
-import '../styles/rocket.css';
+import '../Styles/rocket.css';
 
 const RocketSection = () => {
   const dispatch = useDispatch();

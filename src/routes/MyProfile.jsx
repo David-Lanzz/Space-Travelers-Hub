@@ -1,5 +1,5 @@
 import { Profile, Rocketprofile } from '../components/profile';
-import '../styles/profile.css';
+import '../Styles/profile.css';
 
 const MyProfile = () => (
   <div className="profile">

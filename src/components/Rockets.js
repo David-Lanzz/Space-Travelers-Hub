@@ -1,5 +1,5 @@
 import RocketSection from './RocketSection';
-import '../styles/rocket.css';
+import '../Styles/rocket.css';
 
 const RocketItems = () => (
   <ul className="rocketcontainer">
