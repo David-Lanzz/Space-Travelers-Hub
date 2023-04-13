@@ -77,7 +77,7 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
->  Clone repo via cmd - https://github.com/David-Lanzz/SPACE-TRAVELLERS-HUB.git
+>  Clone repo via cmd - https://github.com/David-Lanzz/Space-Travelers-Hub.git
 > Run npm i to install dependencies
 > Run npm start to show preview in browser
 ### Prerequisites
