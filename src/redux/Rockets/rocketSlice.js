@@ -39,11 +39,20 @@ const rocketSlice = createSlice({
       ...state,
       loading: true,
     }));
-    builder.addCase(getRockets.fulfilled, (state, action) => ({
-      ...state,
-      loading: false,
-      rockets: action.payload,
-    }));
+    builder.addCase(getRockets.fulfilled, (state, action) => {
+      const gottenrockets = action.payload.map((rocket) => ({
+        id: rocket.id,
+        name: rocket.name,
+        description: rocket.description,
+        flickrImg: rocket.flickr_images,
+      }));
+      return {
+        ...state,
+        loading: false,
+
+        rockets: gottenrockets,
+      };
+    });
     builder.addCase(getRockets.rejected, (state) => ({
       ...state,
       loading: false,

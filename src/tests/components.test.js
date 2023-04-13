@@ -11,11 +11,11 @@ describe('tests for components', () => {
     const mission = render(<Provider store={store}><Missionsection /></Provider>);
     expect(mission).toMatchSnapshot();
   });
-  test('Snapshot test for Missions', () => {
+  test('Snapshot test for Rockets', () => {
     const rockets = render(<Provider store={store}><RocketSection /></Provider>);
     expect(rockets).toMatchSnapshot();
   });
-  test('Snapshot test for Missions', () => {
+  test('Snapshot test for Profile', () => {
     const profile = render(<Provider store={store}><Profile /></Provider>);
     expect(profile).toMatchSnapshot();
   });

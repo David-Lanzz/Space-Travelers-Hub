@@ -34,15 +34,12 @@ const missionSlice = createSlice({
     builder
       .addCase(getMissions.pending, (state) => ({ ...state, loading: true }))
       .addCase(getMissions.fulfilled, (state, action) => {
-        const gottenmissions = action.payload;
-        for (let index = 0; index < gottenmissions.length; index += 1) {
-          gottenmissions[index].member = false;
-          if (index % 2 === 0) {
-            gottenmissions[index].background = '#eeeeee';
-          } else {
-            gottenmissions[index].background = '#fff';
-          }
-        }
+        const gottenmissions = action.payload.map((mission) => ({
+          mission_id: mission.mission_id,
+          mission_name: mission.mission_name,
+          description: mission.description,
+          member: false,
+        }));
         return { ...state, loading: false, missions: gottenmissions };
       })
       .addCase(getMissions.rejected, (state) => ({ ...state, error: true, loading: false }));
